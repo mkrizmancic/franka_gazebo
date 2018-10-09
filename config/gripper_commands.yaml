@@ -1,0 +1,5 @@
+gripper_position_controller:
+  type: "effort_controllers/JointGroupEffortController"
+  joints:
+  - panda_finger_joint1
+  - panda_finger_joint2

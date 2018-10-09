@@ -1,0 +1,21 @@
+<launch>
+	<param name="robot_description" textfile="$(find franka_gazebo)/robots/urdf/panda_arm_hand.urdf"/>
+
+	<node name="spawn" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model panda"/>
+
+	<rosparam command="load" file="$(find franka_gazebo)/config/joint_states.yaml" ns="franka"/>
+	<rosparam command="load" file="$(find franka_gazebo)/config/joint_commands.yaml" ns="franka"/>
+	<rosparam command="load" file="$(find franka_gazebo)/config/gripper_commands.yaml" ns="franka"/>
+
+	<node name="franka_controller_spawner" pkg="controller_manager" type="spawner" args="franka/joint_state_controller
+		franka/joint1_position_controller
+		franka/joint2_position_controller
+		franka/joint3_position_controller
+		franka/joint4_position_controller
+		franka/joint5_position_controller
+		franka/joint6_position_controller
+		franka/joint7_position_controller
+		franka/gripper_position_controller"/>
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="rob_st_pub"/> 
+</launch>
