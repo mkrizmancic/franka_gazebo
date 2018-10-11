@@ -74,7 +74,7 @@
     <link name="${arm_id}_link2">
       <inertial>
         <mass value="2.0" />
-        <origin xyz="0 -0.06861 -0.0322285" rpy="0 0 0" />
+        <origin xyz="0 -0.06861 0.0322285" rpy="0 0 0" />
         <inertia ixx="0.0133471665898" ixy="0.0" ixz="0.0" iyy="0.00453546292829" iyz="-0.00345141767814" izz="0.0117893683438" />
       </inertial>
       <visual>
@@ -170,7 +170,7 @@
     <link name="${arm_id}_link5">
       <inertial>
         <mass value="2.0" />
-        <origin xyz="0 -0.0610427 -0.104176" rpy="0 0 0" />
+        <origin xyz="0 0.0610427 -0.104176" rpy="0 0 0" />
         <inertia ixx="0.0221688865058" ixy="4.74659552633e-07" ixz="-7.67366276757e-06" iyy="0.0210768530951" iyz="-0.00566170398384" izz="0.00324185442455" />
       </inertial>
       <visual>
