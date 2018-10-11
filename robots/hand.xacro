@@ -19,7 +19,7 @@
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://franka_gazebo/meshes/hand.STL"/>
+          <mesh filename="package://franka_gazebo/meshes/visual/hand.dae"/>
         </geometry>
         <material name="">
           <color rgba="1 1 1 1"/>
@@ -28,7 +28,7 @@
       <collision>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://franka_gazebo/meshes/hand_collision.STL"/>
+          <mesh filename="package://franka_gazebo/meshes/collision/hand.stl"/>
         </geometry>
       </collision>
       <inertial>
@@ -45,7 +45,7 @@
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://franka_gazebo/meshes/leftfinger.STL"/>
+          <mesh filename="package://franka_gazebo/meshes/visual/finger.dae"/>
         </geometry>
         <material name="">
           <color rgba="1 1 1 1"/>
@@ -53,7 +53,7 @@
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://franka_gazebo/meshes/leftfinger_collision.STL"/>
+          <mesh filename="package://franka_gazebo/meshes/collision/finger.stl"/>
         </geometry>
       </collision>
       <inertial>
@@ -68,9 +68,9 @@
 
     <link name="${ns}_rightfinger">
       <visual>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin rpy="0 0 ${pi}" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://franka_gazebo/meshes/rightfinger.STL"/>
+          <mesh filename="package://franka_gazebo/meshes/visual/finger.dae"/>
         </geometry>
         <material name="">
           <color rgba="1 1 1 1"/>
@@ -78,12 +78,12 @@
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://franka_gazebo/meshes/rightfinger_collision.STL"/>
+          <mesh filename="package://franka_gazebo/meshes/collision/finger.stl"/>
         </geometry>
       </collision>
       <inertial>
         <mass value="0.1"/>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin rpy="0 0 ${pi}" xyz="0 0 0"/>
         <inertia
           ixx="0.0001" ixy="0.0" ixz="0.0"
           iyy="0.0001" iyz="0.0"
