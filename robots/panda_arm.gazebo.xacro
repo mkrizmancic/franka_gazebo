@@ -85,13 +85,4 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-
-	<!-- In Gazebo, fix Panda arm (link_0) to world frame -->
-	<xacro:if value="$(arg gazebo)">
-	  <link name="world"/>
-	  <joint name="fixed" type="fixed">
-	    <parent link="world"/>
-	    <child link="${arm_id}_link0"/>
-	  </joint>
-	</xacro:if>
 </robot>
