@@ -18,12 +18,12 @@
 
     <link name="${arm_id}_link0">
       <inertial>
-         <mass value="1.2" />
-         <origin rpy="0 0 0" xyz="0 0 0.055" />
-         <inertia ixx="0.00229" ixy="0" ixz="0" iyy="0.00216" iyz="0" izz="0.00229" />
+        <mass value="1.2" />
+        <origin xyz="-0.025566 -2.88e-05 0.057332" rpy="0 0 0" />
+        <inertia ixx="0.00321464142876" ixy="-6.41883382175e-06" ixz="-0.000517831800505" iyy="0.00448060158136" iyz="4.44796677541e-06" izz="0.00420639057326" />
       </inertial>
       <visual>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin xyz="${xyz}" rpy="${rpy}"/>
         <geometry>
           <mesh filename="package://${package_name}/meshes/visual/link0.dae"/>
         </geometry>
@@ -32,21 +32,21 @@
         </material>
       </visual>
       <collision>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin xyz="${xyz}" rpy="${rpy}"/>
         <geometry>
-          <mesh filename="package://${package_name}/meshes/collision/ link0.stl"/>
+          <mesh filename="package://${package_name}/meshes/collision/link0.stl"/>
         </geometry>
       </collision>
     </link>
 
     <link name="${arm_id}_link1">
       <inertial>
-         <mass value="2.0" />
-         <origin rpy="0 0 0" xyz="0 0 0.130" />
-         <inertia ixx="0.0136666666667" ixy="0" ixz="0" iyy="0.0118666666667" iyz="0" izz="0.003" />
+        <mass value="2.0" />
+        <origin xyz="0 -0.0324958 -0.0675818" rpy="0 0 0" />
+        <inertia ixx="0.0131691210426" ixy="0.0" ixz="0.0" iyy="0.0116157716709" iyz="0.00341302369431" izz="0.00453058997903" />
       </inertial>
       <visual>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin xyz="${xyz}" rpy="${rpy}"/>
         <geometry>
           <mesh filename="package://${package_name}/meshes/visual/link1.dae"/>
         </geometry>
@@ -55,7 +55,7 @@
         </material>
       </visual>
       <collision>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin xyz="${xyz}" rpy="${rpy}"/>
         <geometry>
           <mesh filename="package://${package_name}/meshes/collision/link1.stl"/>
         </geometry>
@@ -63,22 +63,22 @@
     </link>
 
     <joint name="${arm_id}_joint1" type="revolute">
-      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.818745" soft_upper_limit="2.818745"/>
+      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
       <origin rpy="0 0 0" xyz="0 0 0.333"/>
       <parent link="${arm_id}_link0"/>
       <child link="${arm_id}_link1"/>
       <axis xyz="0 0 1"/>
-      <limit effort="87" lower="-2.9671" upper="2.9671" velocity="2.5"/>
+      <limit effort="87" lower="-2.8973" upper="2.8973" velocity="2.1750"/>
     </joint>
 
     <link name="${arm_id}_link2">
       <inertial>
-          <mass value="2.0" />
-          <origin rpy="0 0 0" xyz="0 -0.06 0.07" />
-          <inertia ixx="0.0136666666667" ixy="0" ixz="0" iyy="0.0118666666667" iyz="0" izz="0.003" />
-        </inertial>
+        <mass value="2.0" />
+        <origin xyz="0 -0.06861 0.0322285" rpy="0 0 0" />
+        <inertia ixx="0.0133471665898" ixy="0.0" ixz="0.0" iyy="0.00453546292829" iyz="-0.00345141767814" izz="0.0117893683438" />
+      </inertial>
       <visual>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin xyz="${xyz}" rpy="${rpy}"/>
         <geometry>
           <mesh filename="package://${package_name}/meshes/visual/link2.dae"/>
         </geometry>
@@ -87,7 +87,7 @@
         </material>
       </visual>
       <collision>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin xyz="${xyz}" rpy="${rpy}"/>
         <geometry>
           <mesh filename="package://${package_name}/meshes/collision/link2.stl"/>
         </geometry>
@@ -95,22 +95,22 @@
     </link>
 
     <joint name="${arm_id}_joint2" type="revolute">
-      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-1.74097" soft_upper_limit="1.74097"/>
-      <origin rpy="-1.570796326794897 0 0" xyz="0 0 0"/>
+      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-1.7628" soft_upper_limit="1.7628"/>
+      <origin rpy="${-pi/2} 0 0" xyz="0 0 0"/>
       <parent link="${arm_id}_link1"/>
       <child link="${arm_id}_link2"/>
       <axis xyz="0 0 1"/>
-      <limit effort="87" lower="-1.8326" upper="1.8326" velocity="2.5"/>
+      <limit effort="87" lower="-1.7628" upper="1.7628" velocity="2.1750"/>
     </joint>
 
     <link name="${arm_id}_link3">
-       <inertial>
-          <mass value="2.0" />
-          <origin rpy="0 0 0" xyz="0 -0.06 0.130" />
-          <inertia ixx="0.0136666666667" ixy="0" ixz="0" iyy="0.0118666666667" iyz="0" izz="0.003" />
-        </inertial>
+      <inertial>
+        <mass value="2.0" />
+        <origin xyz="0.0469893 0.0316374 -0.031704" rpy="0 0 0" />
+        <inertia ixx="0.00648215656226" ixy="-0.00208815651376" ixz="-0.00279115614313" iyy="0.00831183200611" iyz="-0.00183021976037" izz="0.00682120637365" />
+      </inertial>
       <visual>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin xyz="${xyz}" rpy="${rpy}"/>
         <geometry>
           <mesh filename="package://${package_name}/meshes/visual/link3.dae"/>
         </geometry>
@@ -119,7 +119,7 @@
         </material>
       </visual>
       <collision>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin xyz="${xyz}" rpy="${rpy}"/>
         <geometry>
           <mesh filename="package://${package_name}/meshes/collision/link3.stl"/>
         </geometry>
@@ -127,22 +127,22 @@
     </link>
 
     <joint name="${arm_id}_joint3" type="revolute">
-      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.818745" soft_upper_limit="2.818745"/>
-      <origin rpy="1.570796326794897 0 0" xyz="0 -0.316 0"/>
+      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
+      <origin rpy="${pi/2} 0 0" xyz="0 -0.316 0"/>
       <parent link="${arm_id}_link2"/>
       <child link="${arm_id}_link3"/>
       <axis xyz="0 0 1"/>
-      <limit effort="87" lower="-2.9671" upper="2.9671" velocity="2.5"/>
+      <limit effort="87" lower="-2.8973" upper="2.8973" velocity="2.1750"/>
     </joint>
 
     <link name="${arm_id}_link4">
       <inertial>
-          <mass value="2.0" />
-          <origin rpy="0 0 0" xyz="0 0.06 0.07" />
-          <inertia ixx="0.0136666666667" ixy="0" ixz="0" iyy="0.0118666666667" iyz="0" izz="0.003" />
-        </inertial>
+        <mass value="2.0" />
+        <origin xyz="-0.0360446 0.0336853 0.031882" rpy="0 0 0" />
+        <inertia ixx="0.00671986454733" ixy="0.00291676949762" ixz="-0.00202708355458" iyy="0.00693605634688" iyz="0.00198129448841" izz="0.00861470624749" />
+      </inertial>
       <visual>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin xyz="${xyz}" rpy="${rpy}"/>
         <geometry>
           <mesh filename="package://${package_name}/meshes/visual/link4.dae"/>
         </geometry>
@@ -151,7 +151,7 @@
         </material>
       </visual>
       <collision>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin xyz="${xyz}" rpy="${rpy}"/>
         <geometry>
           <mesh filename="package://${package_name}/meshes/collision/link4.stl"/>
         </geometry>
@@ -159,22 +159,22 @@
     </link>
 
     <joint name="${arm_id}_joint4" type="revolute">
-      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.98452" soft_upper_limit="0.082935"/>
-      <origin rpy="1.570796326794897 0 0" xyz="0.0825 0 0"/>
+      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-3.0718" soft_upper_limit="-0.0698"/>
+      <origin rpy="${pi/2} 0 0" xyz="0.0825 0 0"/>
       <parent link="${arm_id}_link3"/>
       <child link="${arm_id}_link4"/>
       <axis xyz="0 0 1"/>
-      <limit effort="87" lower="-3.1416" upper="0.0873" velocity="2.5"/>
+      <limit effort="87" lower="-3.0718" upper="-0.0698" velocity="2.1750"/>
     </joint>
 
     <link name="${arm_id}_link5">
       <inertial>
-          <mass value="2.0" />
-          <origin rpy="0 0 0" xyz="0 0 0.124" />
-          <inertia ixx="0.0126506666667" ixy="0" ixz="0" iyy="0.0108506666667" iyz="0" izz="0.003" />
-        </inertial>
+        <mass value="2.0" />
+        <origin xyz="0 0.0610427 -0.104176" rpy="0 0 0" />
+        <inertia ixx="0.0221688865058" ixy="4.74659552633e-07" ixz="-7.67366276757e-06" iyy="0.0210768530951" iyz="-0.00566170398384" izz="0.00324185442455" />
+      </inertial>
       <visual>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin xyz="${xyz}" rpy="${rpy}"/>
         <geometry>
           <mesh filename="package://${package_name}/meshes/visual/link5.dae"/>
         </geometry>
@@ -183,7 +183,7 @@
         </material>
       </visual>
       <collision>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin xyz="${xyz}" rpy="${rpy}"/>
         <geometry>
           <mesh filename="package://${package_name}/meshes/collision/link5.stl"/>
         </geometry>
@@ -191,22 +191,22 @@
     </link>
 
     <joint name="${arm_id}_joint5" type="revolute">
-      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.818745" soft_upper_limit="2.818745"/>
-      <origin rpy="-1.570796326794897 0 0" xyz="-0.0825 0.384 0"/>
+      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
+      <origin rpy="${-pi/2} 0 0" xyz="-0.0825 0.384 0"/>
       <parent link="${arm_id}_link4"/>
       <child link="${arm_id}_link5"/>
       <axis xyz="0 0 1"/>
-      <limit effort="12" lower="-2.9671" upper="2.9671" velocity="3"/>
+      <limit effort="12" lower="-2.8973" upper="2.8973" velocity="2.6100"/>
     </joint>
 
     <link name="${arm_id}_link6">
       <inertial>
-          <mass value="1.0" />
-          <origin rpy="0 0 0" xyz="0 0 0.0" />
-          <inertia ixx="0.00260416666667" ixy="0" ixz="0" iyy="0.00260416666667" iyz="0" izz="0.00260416666667" />
-        </inertial>
+        <mass value="1.0" />
+        <origin xyz="0.0510509 0.009108 0.0106343" rpy="0 0 0" />
+        <inertia ixx="0.00195700935727" ixy="-0.000282114106779" ixz="0.000405972448308" iyy="0.00260954781656" iyz="8.41754974355e-05" izz="0.00360151152283" />
+      </inertial>
       <visual>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin xyz="${xyz}" rpy="${rpy}"/>
         <geometry>
           <mesh filename="package://${package_name}/meshes/visual/link6.dae"/>
         </geometry>
@@ -215,7 +215,7 @@
         </material>
       </visual>
       <collision>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin xyz="${xyz}" rpy="${rpy}"/>
         <geometry>
           <mesh filename="package://${package_name}/meshes/collision/link6.stl"/>
         </geometry>
@@ -223,22 +223,22 @@
     </link>
 
     <joint name="${arm_id}_joint6" type="revolute">
-      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-0.082935" soft_upper_limit="3.631185"/>
-      <origin rpy="1.570796326794897 0 0" xyz="0 0 0"/>
+      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-0.0175" soft_upper_limit="3.7525"/>
+      <origin rpy="${pi/2} 0 0" xyz="0 0 0"/>
       <parent link="${arm_id}_link5"/>
       <child link="${arm_id}_link6"/>
       <axis xyz="0 0 1"/>
-      <limit effort="12" lower="-0.0873" upper="3.8223" velocity="3"/>
+      <limit effort="12" lower="-0.0175" upper="3.7525" velocity="2.6100"/>
     </joint>
 
     <link name="${arm_id}_link7">
       <inertial>
-          <mass value="0.2" />
-          <origin xyz="0 0 0" />
-          <inertia ixx="6.66666666667e-05" ixy="0" ixz="0" iyy="6.66666666667e-05" iyz="0" izz="0.00012" />
-        </inertial>
+        <mass value="0.2" />
+        <origin xyz="0.0109695 0.0107965 0.0650411" rpy="0 0 0" />
+        <inertia ixx="0.000329210698897" ixy="-4.53299061184e-05" ixz="1.4766660358e-05" iyy="0.000328889397494" iyz="-3.4586115378e-05" izz="0.000265808689222" />
+      </inertial>
       <visual>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin xyz="${xyz}" rpy="${rpy}"/>
         <geometry>
           <mesh filename="package://${package_name}/meshes/visual/link7.dae"/>
         </geometry>
@@ -247,7 +247,7 @@
         </material>
       </visual>
       <collision>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin xyz="${xyz}" rpy="${rpy}"/>
         <geometry>
           <mesh filename="package://${package_name}/meshes/collision/link7.stl"/>
         </geometry>
@@ -255,12 +255,12 @@
     </link>
 
     <joint name="${arm_id}_joint7" type="revolute">
-      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.818745" soft_upper_limit="2.818745"/>
-      <origin rpy="${pi/2} 0 0" xyz="0.088 0 0"/> <!-- y za orijentaciju ruke na -pi/4 -->
+      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
+      <origin rpy="${pi/2} 0 0" xyz="0.088 0 0"/>
       <parent link="${arm_id}_link6"/>
       <child link="${arm_id}_link7"/>
       <axis xyz="0 0 1"/>
-      <limit effort="12" lower="-2.9671" upper="2.9671" velocity="3"/>
+      <limit effort="12" lower="-2.8973" upper="2.8973" velocity="2.6100"/>
     </joint>
 
     <link name="${arm_id}_link8"/>

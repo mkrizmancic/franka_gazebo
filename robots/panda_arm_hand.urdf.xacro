@@ -8,6 +8,6 @@
 	</xacro:include>
   <xacro:include filename="$(find franka_gazebo)/robots/hand.xacro"/>
   
-  <xacro:panda_arm />
+  <xacro:panda_arm connected_to='world'/>
   <xacro:hand ns="panda" rpy="0 0 ${-pi/4}" connected_to="panda_link8"/>
 </robot>
