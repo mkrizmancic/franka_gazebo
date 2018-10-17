@@ -4,7 +4,7 @@
 	<node name="spawn" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model panda"/>
 
 	<rosparam command="load" file="$(find franka_gazebo)/config/joint_states.yaml" ns="franka"/>
-	<rosparam command="load" file="$(find franka_gazebo)/config/joint_commands.yaml" ns="franka"/>
+	<rosparam command="load" file="$(find franka_gazebo)/config/joint_commands.yaml"/>
 
 	<node name="franka_controller_spawner" pkg="controller_manager" type="spawner" args="franka/joint_state_controller
 		franka/joint1_position_controller
