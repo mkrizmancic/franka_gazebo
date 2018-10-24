@@ -159,12 +159,14 @@
     </link>
 
     <joint name="${arm_id}_joint4" type="revolute">
-      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-3.0718" soft_upper_limit="-0.0698"/>
+      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-3.0718" soft_upper_limit="0.0698"/>
+      <!-- soft_upper_limitr should be -0.0698, but that brakes simulation when initial position for this joint is 0.0 -->
       <origin rpy="${pi/2} 0 0" xyz="0.0825 0 0"/>
       <parent link="${arm_id}_link3"/>
       <child link="${arm_id}_link4"/>
       <axis xyz="0 0 1"/>
-      <limit effort="87" lower="-3.0718" upper="-0.0698" velocity="2.1750"/>
+      <limit effort="87" lower="-3.0718" upper="0.0698" velocity="2.1750"/>
+      <!-- upper should be -0.0698, but that brakes simulation when initial position for this joint is 0.0 -->
     </joint>
 
     <link name="${arm_id}_link5">
