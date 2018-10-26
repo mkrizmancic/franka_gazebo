@@ -7,7 +7,8 @@
 	<rosparam command="load" file="$(find franka_gazebo)/config/joint_commands.yaml" ns="franka"/>
 	<rosparam command="load" file="$(find franka_gazebo)/config/default.yaml"/>
 
-	<node name="franka_controller_spawner" pkg="controller_manager" type="spawner" args="franka/joint_state_controller
+	<node name="franka_controller_spawner" pkg="controller_manager" type="spawner" args=
+		"franka/joint_state_controller
 		franka/joint1_position_controller
 		franka/joint2_position_controller
 		franka/joint3_position_controller
@@ -15,4 +16,6 @@
 		franka/joint5_position_controller
 		franka/joint6_position_controller
 		franka/joint7_position_controller"/>
+
+	<node pkg="robot_state_publisher" type="robot_state_publisher" name="rob_st_pub"/> 
 </launch>
