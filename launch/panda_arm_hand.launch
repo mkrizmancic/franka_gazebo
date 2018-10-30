@@ -22,4 +22,5 @@
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="rob_st_pub"/> 
 
   <node pkg="franka_gazebo" type="gripper_publisher.py" name="gripper_publisher"/>
+  <node pkg="franka_gazebo" type="example_joint_publisher.py" name="example_joint_publisher" output="screen"/>
 </launch>

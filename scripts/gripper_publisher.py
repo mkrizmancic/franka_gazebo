@@ -13,7 +13,7 @@ def callback(data):
 
     msg = Float64MultiArray()
     msg.layout.dim = [MultiArrayDimension('', 2, 1)]
-    msg.data = [data.data, data.data]
+    msg.data = [data.data / 2, data.data / 2]
 
     pub.publish(msg)
 
