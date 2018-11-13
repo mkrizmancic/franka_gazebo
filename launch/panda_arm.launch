@@ -1,5 +1,5 @@
 <launch>
-	<param name="robot_description" textfile="$(find franka_gazebo)/robots/urdf/panda_arm.urdf"/>
+	<param name="robot_description" command="$(find xacro)/xacro --inorder $(find franka_gazebo)/robots/panda_arm.urdf.xacro"/>
 
 	<node name="spawn" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model panda"/>
 

@@ -32,8 +32,6 @@ PID parameters were set to enable stable control, but they can be further optimi
 
 Two launch files are provided in this package, one for just the arm and the other for the arm with the attached gripper.
 They spawn the robot model in Gazebo and start the controllers.<br>
-Make sure to run<br>
-`rosrun xacro xacro --inorder panda_arm.urdf.xacro > panda_arm.urdf`<br>
-or<br>
-`rosrun xacro xacro --inorder panda_arm_hand.urdf.xacro > panda_arm_hand.urdf`<br>
-while positioned in `franka_gazebo/robots` directory. This will make URDF files from provided XACRO files.
+Launch file `panda_arm_hand.launch` includes an example controller that sends sinusoidal position commands to each joint.
+Make sure that Gazebo is already running by launching your desired world, for example: <br>
+`roslaunch gazebo_ros empty_world.launch`.
