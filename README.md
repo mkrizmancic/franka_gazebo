@@ -1,3 +1,6 @@
+### IMPORTANT!
+This package was developed for Ubuntu 16.04. and ROS Kinetic. It doesn't work in Ubuntu 18.04. and ROS Melodic (see the Issues). This version **will not** be maintained or developed any further. A new version for Melodic is planned at some point in future.
+
 # franka_gazebo
 A simple ROS Gazebo package for Franka Panda robot arm.
 
